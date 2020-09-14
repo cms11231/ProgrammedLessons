@@ -5,7 +5,7 @@ public class StringLength
         String str;
         int    len;
         
-        str = new String( "hello" );
+        str = new String( "     " );
 
         len = str.length();
 
