@@ -35,5 +35,3 @@ public class OrderChecker
 
     }
 }
-
-// The distance a brick travels in 100 seconds is 160,870.0 feet.
