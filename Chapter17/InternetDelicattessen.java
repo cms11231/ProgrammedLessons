@@ -40,7 +40,7 @@ public class InternetDelicattessen {
 				}
 			}
 
-			System.out.println("Invoice:\n" + item + "\t" + price + "\n\tDelivery" + totalDelivery + "\n\tTotal" + total);
+			System.out.println("Invoice:\n" + item + "\t" + price + "\n\tDelivery" + totalDelivery + "\n\tTotal" + totall);
 
 
 		}
