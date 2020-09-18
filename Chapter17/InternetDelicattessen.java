@@ -10,9 +10,11 @@ public class InternetDelicattessen {
 
 			System.out.println("Enter the item: ");
 			item = scan.nextLine();
-			System.out.println("Enter the price: ");
+            
+            System.out.println("Enter the price: ");
 			price = scan.nextDouble();
-			System.out.println("Overnight delivery (0==no, 1==yes): ");
+            
+            System.out.println("Overnight delivery (0==no, 1==yes): ");
 			delivery = scan.nextBoolean();
 
 			double totall;
@@ -36,7 +38,7 @@ public class InternetDelicattessen {
 				}
 			}
 
-			System.out.println("Invoice:\n\t" + item + "\t" + price + "\n\tDelivery\t" + totalDelivery + "\n\tTotal\t" + total);
+			System.out.println("Invoice:\n" + item + "\t" + price + "\n\tDelivery" + totalDelivery + "\n\tTotal" + total);
 
 
 		}
