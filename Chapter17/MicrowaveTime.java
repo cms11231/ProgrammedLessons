@@ -22,9 +22,20 @@ public class MicrowaveTime {
 				seconds = time;
 			} else {
 				seconds = math;
-			}
+            }
 
-            System.out.println(seconds);
+            double timee = (.5 * time) + time;
+            double timeee = time * 2;
+
+            if (items > 3){
+                System.out.println("Not reccomended");
+            } else if (items == 3){
+                System.out.println(timeee);
+            } else if (items == 2){
+                System.out.println(timee);
+            } else if (items == 1){
+                System.out.println(time);
+            }
 		}
 		
 
