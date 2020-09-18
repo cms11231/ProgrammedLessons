@@ -5,8 +5,10 @@ public class InternetDelicattessen {
 		public static void main(String[] args) {
 			Scanner scan = new Scanner(System.in);
 			String item;
-			double price;
-			boolean delivery;
+            
+            double price;
+            
+            boolean delivery;
 
 			System.out.println("Enter the item: ");
 			item = scan.nextLine();
@@ -14,7 +16,7 @@ public class InternetDelicattessen {
             System.out.println("Enter the price: ");
 			price = scan.nextDouble();
             
-            System.out.println("Overnight delivery (0==no, 1==yes): ");
+            System.out.println("Overnight delivery: ");
 			delivery = scan.nextBoolean();
 
 			double totall;
