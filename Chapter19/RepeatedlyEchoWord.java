@@ -11,9 +11,9 @@ public class RepeatedlyEchoWord {
 
 		System.out.println("Enter a word: ");
         str = scan.next();
-		System.out.println("\n");
+
         int times = str.length();
-        
+		System.out.println("\n");
         
         while(i < times){
 
