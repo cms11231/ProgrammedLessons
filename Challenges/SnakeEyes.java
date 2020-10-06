@@ -9,49 +9,57 @@ public class SnakeEyes {
         int dic1 = 0;
         int dic2 = 0;
 
-        int numrolls = 0;
+
+        double numrolls = 0;
         int rolls = 0;
-        int score = 0;
+        double score = 0;
         int scr = 0;
 
-        float four = 0;
+        double four = 0;
 
         boolean snake = false;
 
 
         System.out.println("Enter number of Simulations: ");
         sim = scan.nextInt();
-        dic1 = rand.nextInt(max) + 1;
-        dic2 = rand.nextInt(max) + 1;
 
         for (int i = 0; i < sim; i++) {
             snake = false;
-            numrolls = 0;
             score = 0;
+            rolls = 0;
+
             while (!snake) {
                 dic1 = rand.nextInt(max) + 1;
                 dic2 = rand.nextInt(max) + 1;
-
+                rolls++;
                 if (dic1 == 1 && dic2 == 1) {
-                    if (rolls > 4){
-                        four ++;
-                    }
                     snake = true;
-                    numrolls += rolls + 1;
+                    numrolls += rolls;
                     score += scr;
+                    if (rolls > 4){
+                        four++;
+                    }
+
                 }  else {
                     scr += dic1 + dic2;
-                    rolls++;
                     snake = false;
+
                 }
+
                 
             }
+
+
+
+
         }
         
+        System.out.println("4: " + four);
+        System.out.println("sim: " + sim);
 
         numrolls = numrolls / sim;
         score = score / sim;
-        four = (four / sim) * 100;
+        four = (four / (double)sim) * 100;
         
         System.out.println("Average Rolls: " + numrolls);
         System.out.println("Average Score: " + score);
