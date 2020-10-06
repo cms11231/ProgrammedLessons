@@ -49,9 +49,6 @@ public class SnakeEyes {
                 
             }
 
-
-
-
         }
         
         System.out.println("4: " + four);
