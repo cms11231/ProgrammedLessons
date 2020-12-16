@@ -15,7 +15,7 @@ public class Game{
     public void newGame(){
         for (int i = 1; i <= 4; i++){
             System.out.println("What kind of character is character #" + i + "? (k=knight, p=peasent, c=cleric, m=mage, o=courtier)");
-            String kind = scan.nextLine;
+            String kind = scan.nextLine();
             if (kind.equals("k")) {
                 int k = 1; k++;
                 if (k>2){
@@ -28,7 +28,7 @@ public class Game{
                     while (!good) {
                         character = new GameCharacter(kind);
                         System.out.println("Would you like to keep this character? y/n");
-                        input = scan.nextString;
+                        input = scan.nextLine();
                         if(input.equals("y")){
                             good = true;
                         } else {
@@ -49,7 +49,7 @@ public class Game{
                     while (!good) {
                         character = new GameCharacter(kind);
                         System.out.println("Would you like to keep this character? y/n");
-                        input = scan.nextString;
+                        input = scan.nextLine();
                         if(input.equals("y")){
                             good = true;
                         } else {
@@ -69,7 +69,7 @@ public class Game{
                     while (!good) {
                         character = new GameCharacter(kind);
                         System.out.println("Would you like to keep this character? y/n");
-                        input = scan.nextString;
+                        input = scan.nextLine();
                         if(input.equals("y")){
                             good = true;
                         } else {
@@ -89,7 +89,7 @@ public class Game{
                     while (!good) {
                         character = new GameCharacter(kind);
                         System.out.println("Would you like to keep this character? y/n");
-                        input = scan.nextString;
+                        input = scan.nextLine();
                         if(input.equals("y")){
                             good = true;
                         } else {
@@ -109,7 +109,7 @@ public class Game{
                     while (!good) {
                         character = new GameCharacter(kind);
                         System.out.println("Would you like to keep this character? y/n");
-                        input = scan.nextString;
+                        input = scan.nextLine();
                         if(input.equals("y")){
                             good = true;
                         } else {
@@ -120,8 +120,4 @@ public class Game{
             } 
         }
     }
-
-
-
-
 }
