@@ -60,8 +60,13 @@ public class GameCharacter{
                 //reroll
             }
         }
+
     }
-
-
-
+    public String toString() {
+        if (title == null) {
+            return kind + "," + strength + "," + tough + "," + intel + "," + magic + "," + influ;
+        } else {
+            return title + "," + kind + "," + strength + "," + tough + "," + intel + "," + magic + "," + influ;
+        }
+    }
 }

@@ -20,6 +20,8 @@ public class GameTester{
         while(choice>0 && choice<=4){
 
             if (choice==1){
+                
+                
                 System.out.println("Enter file name");
                 String fileName = scan.nextLine();
                 fileName = scan.nextLine();
@@ -27,25 +29,32 @@ public class GameTester{
                 output = new PrintWriter(new FileWriter(file, true));
                 System.out.println("Enter the title of your new game:\n--> ");
                 title = scan.nextLine();
-                // Game game = new Game(title);
+                output.println(title);
+
                 for (int i = 1; i <= 4; i++){
+                    int k = 1;
+                    int p = 1;
+                    int c = 1;
+                    int m = 1;
+                    int o = 1;
                     System.out.println("What kind of character is character #" + i + "? (k=knight, p=peasent, c=cleric, m=mage, o=courtier)");
                     String kind = scan.nextLine();
                     if (kind.equals("k")) {
-                        int k = 1; k++;
+                        k++;
                         if (k>2){
                             System.out.println("You cannot have more than two knights.");
                             k--; i--;
                         } else {
-                            GameCharacter character = new GameCharacter(kind);
                             boolean good = false;
                             String input;
                             while (!good) {
-                                character = new GameCharacter(kind);
+                                GameCharacter character = new GameCharacter(kind);
+                                System.out.println(character);
                                 System.out.println("Would you like to keep this character? y/n");
                                 input = scan.nextLine();
                                 if(input.equals("y")){
                                     good = true;
+                                    output.println(character);
                                 } else {
                                     good = false;
                                 }
@@ -53,86 +62,93 @@ public class GameTester{
                         }
         
                     } else if (kind.equals("p")) {
-                        int p = 1; p++;
+                        p++;
                         if (p>2){
                             System.out.println("You cannot have more than two peasants.");
                             p--; i--;
                         } else {
-                            GameCharacter character = new GameCharacter(kind);
                             boolean good = false;
                             String input;
                             while (!good) {
-                                character = new GameCharacter(kind);
+                                GameCharacter character = new GameCharacter(kind);
+                                System.out.println(character);
                                 System.out.println("Would you like to keep this character? y/n");
                                 input = scan.nextLine();
                                 if(input.equals("y")){
                                     good = true;
+                                    output.println(character);
                                 } else {
                                     good = false;
                                 }
                             }        
                         }
                     } else if (kind.equals("c")) {
-                        int c = 1; c++;
+                        c++;
                         if (c>2){
                             System.out.println("You cannot have more than two clerics.");
                             c--; i--;
                         } else {
-                            GameCharacter character = new GameCharacter(kind);
                             boolean good = false;
                             String input;
                             while (!good) {
-                                character = new GameCharacter(kind);
+                                GameCharacter character = new GameCharacter(kind);
+                                System.out.println(character);
                                 System.out.println("Would you like to keep this character? y/n");
                                 input = scan.nextLine();
                                 if(input.equals("y")){
                                     good = true;
+                                    output.println(character);
                                 } else {
                                     good = false;
                                 }
                             }        
                         }
                     } else if (kind.equals("m")) {
-                        int m = 1; m++;
+                        m++;
                         if (m>2){
                             System.out.println("You cannot have more than two mages.");
                             m--; i--;
                         } else {
-                            GameCharacter character = new GameCharacter(kind);
                             boolean good = false;
                             String input;
                             while (!good) {
-                                character = new GameCharacter(kind);
+                                GameCharacter character = new GameCharacter(kind);
+                                System.out.println(character);
                                 System.out.println("Would you like to keep this character? y/n");
                                 input = scan.nextLine();
                                 if(input.equals("y")){
                                     good = true;
+                                    output.println(character);
                                 } else {
                                     good = false;
                                 }
                             }        
                         }
                     } else if (kind.equals("o")) {
-                        int o = 1; o++;
+                        o++;
                         if (o>2){
                             System.out.println("You cannot have more than two Courtiers.");
                             o--; i--;
                         } else {
-                            GameCharacter character = new GameCharacter(kind);
                             boolean good = false;
                             String input;
                             while (!good) {
-                                character = new GameCharacter(kind);
+                                GameCharacter character = new GameCharacter(kind);
+                                System.out.println(character);
                                 System.out.println("Would you like to keep this character? y/n");
                                 input = scan.nextLine();
                                 if(input.equals("y")){
                                     good = true;
+                                    output.println(character);
                                 } else {
                                     good = false;
                                 }
                             }        
                         }
                     } 
+                    FileWriter writer = new FileWriter(file);
+                    writer.write(title + "\n" + character + "\n" + character);
+                    writer.close();
                 }
             } else if (choice==2){
                 System.out.println("Enter the title of the game you want to validate:\n--> ");
@@ -154,6 +170,5 @@ public class GameTester{
 
         }
 
-    }
+    }}
 
-}
