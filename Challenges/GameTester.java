@@ -155,13 +155,42 @@ public class GameTester{
                     writer.close();
                 }
             } else if (choice==2){
-                System.out.println("Enter the title of the game you want to validate:\n--> ");
+                System.out.println("Enter the title of the file you want to check:\n--> ");
                 title = scan.nextLine();
+                file = new File(title);
+                scan = new Scanner(file);
+
+                Character character;
+
+                scan.nextLine();
+                if (scan.hasNextLine()){
+                    String[] parameters = scan.nextLine().split(",");
+                    character = new Character(parameters[0], parameters[1], Integer.parseInt(parameters[2]), Integer.parseInt(parameters[3]), Integer.parseInt(parameters[4]), Integer.parseInt(parameters[5]), Integer.parseInt(parameters[6]));
+                    if (character.moreThanTwo()) {
+                        System.out.println("There are more than two of a certain character type in this file.");
+                    }
+                    if (character.tooHighOrLow()) {
+                        System.out.println("This character has too many or too little status points.");
+                    }
+                }
                 break;
             } else if (choice==3){
                 System.out.println("Enter the title of the game:\n--> ");
                 title = scan.nextLine();
-                game.reRoll(namee);
+                file = new File(fileName);
+                scan = new Scanner(file);
+
+                String[] parameters = scan.nextLine().split(",");
+                Character character = new Character(parameters[0], parameters[1], Integer.parseInt(parameters[2]), Integer.parseInt(parameters[3]), Integer.parseInt(parameters[4]), Integer.parseInt(parameters[5]), Integer.parseInt(parameters[6]));
+                System.out.println(character);
+
+                System.out.println("Enter the name of the Character you are rolling again:");
+                String changeChar = scan2.nextLine();
+                if (changeChar.equals(character.getName())) {
+                    character.reroll(character);
+                    System.out.println("Now randomization -->" + character );
+                } else 
+
                 break;
             } else if (choice==4){
                 scan.close();

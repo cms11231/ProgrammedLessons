@@ -5,7 +5,7 @@ public class GameCharacter{
     private String kind;
     private Integer strength, tough, intel, magic, influ;
     Random random = new Random();
-    Integer all;
+    private Integer all;
 
     public GameCharacter(String kind) {
         this.kind = kind;
@@ -66,6 +66,10 @@ public class GameCharacter{
     public void setName(String name){
         this.name = name;
     }
+
+    public String getName(){
+        return name;
+    }
     
     public void reroll() {
         if (kind.equals("k")) {
@@ -100,6 +104,27 @@ public class GameCharacter{
             this.influ = random.nextInt(4) + 7;
         }
 
+    }
+
+    public boolean tooHighOrLow(){
+        int all = strength + tough + intel + magic + influ;
+        if (all > 28 || all < 8) {
+            TooHighOrLow = true;
+        }
+        TooHighOrLow = false;
+    }
+
+    public boolean moreThanTwo(){
+        int all = strength + tough + intel + magic + influ;
+        if (k > 2 || p > 2 || c > 2 || m > 2 || 0 > 2) {
+            TooHighOrLow = true;
+        } else {
+        TooHighOrLow = false;
+        }
+    }
+
+    public GameCharacter(String[] parameters) {
+        this(parameters[0], parameters[1], Integer.parseInt(parameters[2]), Integer.parseInt(parameters[3]), Integer.parseInt(parameters[4]), Integer.parseInt(parameters[5]), Integer.parseInt(parameters[6]));
     }
     
     public String toString() {
