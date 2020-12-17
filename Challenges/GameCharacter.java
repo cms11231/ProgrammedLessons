@@ -17,7 +17,7 @@ public class GameCharacter{
             this.influ = random.nextInt(6);
             all = strength + tough + intel + magic + influ;
             if (all > 28 || all < 8) {
-                //reroll
+                reroll();
             }
         } else if (kind.equals("p")) {
             this.strength = random.nextInt(6);
@@ -27,7 +27,7 @@ public class GameCharacter{
             this.influ = random.nextInt(6);
             all = strength + tough + intel + magic + influ;
             if (all > 28 || all < 8) {
-                //reroll
+                reroll();
             }
         } else if (kind.equals("c")) {
             this.strength = random.nextInt(6);
@@ -37,7 +37,7 @@ public class GameCharacter{
             this.influ = random.nextInt(6);
             all = strength + tough + intel + magic + influ;
             if (all > 28 || all < 8) {
-                //reroll
+                reroll();
             }
         } else if (kind.equals("m")) {
             this.strength = random.nextInt(6);
@@ -47,7 +47,7 @@ public class GameCharacter{
             this.influ = random.nextInt(6);
             all = strength + tough + intel + magic + influ;
             if (all > 28 || all < 8) {
-                //reroll
+                reroll();
             }
         }    else if (kind.equals("o")) {
             this.strength = random.nextInt(6);
@@ -57,16 +57,57 @@ public class GameCharacter{
             this.influ = random.nextInt(4) + 7;
             all = strength + tough + intel + magic + influ;
             if (all > 28 || all < 8) {
-                //reroll
+                reroll();
             }
         }
 
     }
+    
+    public void setName(String name){
+        this.name = name;
+    }
+    
+    public void reroll() {
+        if (kind.equals("k")) {
+            this.strength = random.nextInt(4) + 7;
+            this.tough = random.nextInt(6);
+            this.intel = random.nextInt(6);
+            this.magic = random.nextInt(6);
+            this.influ = random.nextInt(6);
+        } else if (kind.equals("p")) {
+            this.strength = random.nextInt(6);
+            this.tough = random.nextInt(4) + 7;
+            this.intel = random.nextInt(6);
+            this.magic = random.nextInt(6);
+            this.influ = random.nextInt(6);
+        } else if (kind.equals("c")) {
+            this.strength = random.nextInt(6);
+            this.tough = random.nextInt(6);
+            this.intel = random.nextInt(4) + 7;
+            this.magic = random.nextInt(6);
+            this.influ = random.nextInt(6);
+        } else if (kind.equals("m")) {
+            this.strength = random.nextInt(6);
+            this.tough = random.nextInt(6);
+            this.intel = random.nextInt(6);
+            this.magic = random.nextInt(4) + 7;
+            this.influ = random.nextInt(6);
+        }    else if (kind.equals("o")) {
+            this.strength = random.nextInt(6);
+            this.tough = random.nextInt(6);
+            this.intel = random.nextInt(6);
+            this.magic = random.nextInt(6);
+            this.influ = random.nextInt(4) + 7;
+        }
+
+    }
+    
     public String toString() {
         if (title == null) {
             return kind + "," + strength + "," + tough + "," + intel + "," + magic + "," + influ;
         } else {
-            return title + "," + kind + "," + strength + "," + tough + "," + intel + "," + magic + "," + influ;
+            return name + "," + kind + "," + strength + "," + tough + "," + intel + "," + magic + "," + influ;
         }
     }
+    
 }

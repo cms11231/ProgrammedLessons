@@ -54,6 +54,7 @@ public class GameTester{
                                 input = scan.nextLine();
                                 if(input.equals("y")){
                                     good = true;
+                                    character.setName(scan.nextLine());
                                     output.println(character);
                                 } else {
                                     good = false;
@@ -76,6 +77,7 @@ public class GameTester{
                                 input = scan.nextLine();
                                 if(input.equals("y")){
                                     good = true;
+                                    character.setName(scan.nextLine());
                                     output.println(character);
                                 } else {
                                     good = false;
@@ -97,6 +99,7 @@ public class GameTester{
                                 input = scan.nextLine();
                                 if(input.equals("y")){
                                     good = true;
+                                    character.setName(scan.nextLine());
                                     output.println(character);
                                 } else {
                                     good = false;
@@ -139,6 +142,7 @@ public class GameTester{
                                 input = scan.nextLine();
                                 if(input.equals("y")){
                                     good = true;
+                                    character.setName(scan.nextLine());
                                     output.println(character);
                                 } else {
                                     good = false;
@@ -147,18 +151,18 @@ public class GameTester{
                         }
                     } 
                     FileWriter writer = new FileWriter(file);
-                    writer.write(title + "\n" + character + "\n" + character);
+                    writer.write(title + "\n" + character + "\n" + character + "\n" + character + "\n" + character);
                     writer.close();
                 }
             } else if (choice==2){
                 System.out.println("Enter the title of the game you want to validate:\n--> ");
                 title = scan.nextLine();
                 break;
-            // } else if (choice==3){
-            //     System.out.println("Enter the title of the game:\n--> ");
-            //     title = scan.nextString();
-            //     // game.reRoll(namee);
-            //     break;
+            } else if (choice==3){
+                System.out.println("Enter the title of the game:\n--> ");
+                title = scan.nextLine();
+                game.reRoll(namee);
+                break;
             } else if (choice==4){
                 scan.close();
                 System.exit(0);
