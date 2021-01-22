@@ -1,5 +1,3 @@
-
-//Inheritance: Exercise #1 Class_2
 public class Class_2 extends Class_1 {
     private int z;
  
